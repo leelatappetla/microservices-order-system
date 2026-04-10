@@ -1,13 +1,29 @@
 # Microservices Order System
 
-A microservices-based order management system with separate product and order services behind an API gateway.
+A Spring Boot microservices-based system with separate product and order services behind an API gateway.
 
-## Services
+---
 
-- **Product Service**: Manages product catalog and inventory
-- **Order Service**: Handles order creation and management
-- **API Gateway**: Provides unified entry point for client requests
+## Architecture
 
-## Getting Started
+- **Product Service** → Handles product catalog  
+- **Order Service** → Handles order processing  
+- **API Gateway** → Entry point for all client requests  
 
-Each service can be built and run independently. See individual service README files for details.
+Each service runs independently and communicates via REST APIs.
+
+---
+
+## How to Run
+
+Run each service separately:
+
+```bash
+cd product-service
+mvn spring-boot:run
+
+cd order-service
+mvn spring-boot:run
+
+cd api-gateway
+mvn spring-boot:run
